@@ -1,0 +1,18 @@
+Запуск контейнера
+docker-compose up -d
+
+Статус контейнера
+docker-compose ps
+
+Остановить контейнер
+docker-compose down
+
+Логи
+docker-compose logs kafka
+
+Adminer
+Имя пользователя admin
+Пароль admin
+
+
+
