@@ -1,0 +1,16 @@
+﻿@inherits LayoutComponentBase
+
+<div class="main_container">
+    @if (_isLoaded)
+    {
+        <div>
+            @Body
+        </div>
+    }
+    else
+    {
+        <div class="main_container_loaded">
+            Загрузка...
+        </div>
+    }
+</div>

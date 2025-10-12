@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using MobileClient.Views.Home;
 
 namespace MobileClient.Views;
 

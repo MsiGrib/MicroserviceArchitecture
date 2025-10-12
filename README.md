@@ -3,8 +3,9 @@ An example implementation of a microservice-based architecture.
 
 ## Client Applications
 - **Blazor WebAssembly (WASM)**: Web client.  
-- **Avalonia**: Cross-platform mobile clients for Android and iOS.  
-  - Both client applications follow the **FSD (Feature-Sliced Design) architecture**.
+  - Client application follow the **FSD (Feature-Sliced Design) architecture**.
+- **Avalonia**: Cross-platform mobile clients for Android and iOS.
+  - Client application follow the **MVVM architecture** and **Vertical architecture**.
 
 ## Technologies
 - **Docker**: Containerization of services.  

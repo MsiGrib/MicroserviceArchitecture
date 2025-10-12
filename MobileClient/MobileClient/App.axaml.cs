@@ -1,9 +1,8 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-
-using MobileClient.ViewModels;
 using MobileClient.Views;
+using MobileClient.Views.Home;
 
 namespace MobileClient;
 
@@ -20,14 +19,15 @@ public partial class App : Application
         {
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainViewModel()
+                Content = new HomeView(),
+                DataContext = new HomeViewModel()
             };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
-            singleViewPlatform.MainView = new MainView
+            singleViewPlatform.MainView = new HomeView
             {
-                DataContext = new MainViewModel()
+                DataContext = new HomeViewModel()
             };
         }
 
