@@ -96,13 +96,78 @@ _pkginfo.txt
 # Node.js
 node_modules/
 
-# Python
-__pycache__/
-*.pyc
+## ===============================
+## Python
+## ===============================
 
-# JetBrains Rider / PyCharm
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# Virtual environments
+.venv/
+.venv*/         # любые виртуальные окружения рядом с проектом
+env/
+env*/
+venv/
+venv*/
+ENV/
+ENV*/
+.venv310/       # твое конкретное окружение
+.venv311/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# PyCharm
 .idea/
-*.sln.iml
+*.iml
+*.iws
+
+# PyCharm specific project files
+.idea/*
+*.iws
+*.ipr
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pyre
+.pyre/
+
+# pytype
+.pytype/
+
+# Coverage
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# pytest
+.cache/
+.pytest_cache/
 
 # VS Code
 .vscode/*
@@ -111,7 +176,9 @@ __pycache__/
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Mac
+## ===============================
+## Mac
+## ===============================
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -129,7 +196,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Windows
+## ===============================
+## Windows
+## ===============================
 Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
@@ -158,16 +227,17 @@ postgres_data/
 .env
 docker-compose.override.yml
 
-# Temporary Docker init scripts (если есть)
+# Temporary Docker init scripts
 docker-entrypoint-initdb.d/
 
 ## ===============================
 ## Custom / temporary files
 ## ===============================
-
 *.tmp
 *.log
 *.bak
 *.swp
 *.swo
 *.old
+
+MServices/AiMService/.venv310/

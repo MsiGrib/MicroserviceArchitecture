@@ -1,0 +1,3 @@
+python setup_env.py
+
+python main.py

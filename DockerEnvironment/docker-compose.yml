@@ -1,5 +1,4 @@
 services:
-  # PostgreSQL 18
   postgres:
     image: postgres:18
     container_name: postgres
@@ -12,8 +11,10 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - app_network
+    mem_limit: 1024m
+    cpu_quota: 60000
+    cpu_period: 100000
 
-  # Kafka 4.0
   kafka:
     image: apache/kafka:4.0.0
     container_name: kafka
@@ -36,8 +37,10 @@ services:
       - ./kafka_data:/var/lib/kafka/data
     networks:
       - app_network
+    mem_limit: 1024m
+    cpu_quota: 60000
+    cpu_period: 100000
 
-  # Kafka UI
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
     container_name: kafka-ui
@@ -50,8 +53,10 @@ services:
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
     networks:
       - app_network
+    mem_limit: 512m
+    cpu_quota: 60000
+    cpu_period: 100000
 
-  # Adminer
   adminer:
     image: adminer:latest
     container_name: adminer
@@ -60,10 +65,29 @@ services:
       - "8081:8080"
     networks:
       - app_network
+    mem_limit: 512m
+    cpu_quota: 60000
+    cpu_period: 100000
+
+  redis:
+    image: redis:7.2
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: ["redis-server", "--save", "60", "1", "--loglevel", "warning"]
+    networks:
+      - app_network
+    mem_limit: 512m
+    cpu_quota: 60000
+    cpu_period: 100000
 
 volumes:
   postgres_data:
   kafka_data:
+  redis_data:
 
 networks:
   app_network:

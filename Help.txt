@@ -11,6 +11,7 @@ docker-compose down
 docker-compose logs kafka
 
 Adminer
+Сервер	postgres
 Имя пользователя admin
 Пароль admin
 
